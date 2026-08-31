@@ -2,4 +2,4 @@ title: "Junyan's Design Hub"
 theme: jekyll-theme-minimal
 markdown: kramdown
 url: "https://junyandesign.com"
-baseurl: "/portfolio-site"
+baseurl: ""
