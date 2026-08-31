@@ -8,14 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Theme Switcher
   const themeSelect = document.getElementById("styles");
   if(themeSelect) {
-    // Set initial theme from select value
-    const initialTheme = themeSelect.value || "solaris";
-    document.documentElement.setAttribute("data-theme", `minimal-${initialTheme}`);
+    // Restore saved theme (already applied early in head.html) and sync the select
+    const savedTheme = localStorage.getItem("theme") || themeSelect.value || "solaris";
+    themeSelect.value = savedTheme;
+    document.documentElement.setAttribute("data-theme", `minimal-${savedTheme}`);
 
     // Listen for changes
     themeSelect.addEventListener("change", function() {
       const selectedTheme = this.value;
       document.documentElement.setAttribute("data-theme", `minimal-${selectedTheme}`);
+      localStorage.setItem("theme", selectedTheme);
     });
   }
 

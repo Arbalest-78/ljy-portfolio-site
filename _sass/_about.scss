@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     padding: var(--space-card-padding);
+    padding-inline: var(--edge-inset);
     padding-bottom: 0;
     gap: var(--space-stack-md);
 
@@ -32,6 +33,7 @@
     display: flex;
     flex-direction: column;
     padding: var(--space-card-padding);
+    padding-inline: var(--edge-inset);
     padding-bottom: 0;
     gap: var(--space-stack-md);
 
@@ -72,6 +74,7 @@
     display: flex;
     flex-direction: column;
     padding: var(--space-card-padding);
+    padding-inline: var(--edge-inset);
     padding-bottom: 0;
     gap: var(--space-stack-md);
 
@@ -109,6 +112,7 @@
     display: flex;
     flex-direction: column;
     padding: var(--space-card-padding);
+    padding-inline: var(--edge-inset);
     gap: var(--space-stack-lg);
 
     .section-overview {

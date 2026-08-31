@@ -1,6 +1,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Apply saved theme before first paint to avoid a flash of the default theme -->
+<script>
+    (function () {
+        var savedTheme = localStorage.getItem("theme") || "solaris";
+        document.documentElement.setAttribute("data-theme", "minimal-" + savedTheme);
+    })();
+</script>
+
 <!-- Style Import -->
 <!-- Preload -->
 <link rel="preload" href="{{ '/assets/fonts/Mulish-VariableFont_wght.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>

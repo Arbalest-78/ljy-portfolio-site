@@ -1,6 +1,6 @@
 :root {
     // Min-Max Screen Sizes
-    --max-screen-width: 1920px; // For ultra-wides
+    --max-screen-width: 3840px; // For ultra-wides
     --min-screen-width: 390px; // iPhone standard
 
     // Base Colors
@@ -35,7 +35,7 @@
 
     //Border
     --border-default: 1px solid var(--color-neutral-900);
-    --border-low-vis: 1px solid var(--color-neutral-400);
+    --border-low-vis: 1px solid var(--color-neutral-700);
     --border-inverted: 1px solid var(--color-neutral-0);
 
     //Section Divider
@@ -61,6 +61,8 @@
     --space-inline-page: var(--space-8);
     --space-section-y: var(--space-16);
     --space-card-padding: var(--space-16);
+    // Keeps content centered once the viewport exceeds max-screen-width, while backgrounds stay full-bleed
+    --edge-inset: max(var(--space-16), calc((100% - var(--max-screen-width)) / 2));
     --space-stack-sm: var(--space-2);
     --space-stack-md: var(--space-4);
     --space-stack-lg: var(--space-6);
