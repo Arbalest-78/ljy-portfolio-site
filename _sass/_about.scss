@@ -11,6 +11,7 @@
         max-width: 50%;
         border-radius: 1rem;
         margin-top: var(--space-16);
+        justify-self: end;
     }
 
     .bio-container{
@@ -69,6 +70,29 @@
     }
 }
 
+// Educations
+.education-section {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-card-padding);
+    padding-inline: var(--edge-inset);
+    padding-bottom: 0;
+    gap: var(--space-stack-md);
+
+    .ed-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-12);
+        align-items: flex-start;
+
+        .ed-item {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-stack-md);
+        }
+    }
+}
+
 // Certificates
 .certifications-section {
     display: flex;
@@ -96,7 +120,7 @@
                 display: flex;
                 flex-direction: row;
                 gap: var(--space-4);
-                font-size: var(--text-size-h4);
+                font-size: var(--text-size-h3);
                 color: var(--text-color-inverted);
                 display: flex;
                 flex-direction: row;
@@ -130,9 +154,10 @@
         gap: var(--space-4);
 
         li img {
-            max-width: 100%;
-            height: 100%;
-            border-radius: 1rem;
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
             overflow: hidden;
         }
     }
@@ -146,12 +171,22 @@
         padding-top: 10rem;
 
         img {
-            max-width: 100%;
+            max-width: 80%;
             margin-top: 0;
         }
     }
 
     .skills-section {
+        display: grid;
+        grid-template-columns: 0.25fr 0.75fr;
+        gap: var(--space-16);
+
+        h2 {
+            justify-self: end;
+        }
+    }
+
+    .education-section {
         display: grid;
         grid-template-columns: 0.25fr 0.75fr;
         gap: var(--space-16);
