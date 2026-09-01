@@ -1,4 +1,15 @@
 html[data-theme="minimal-neobrutalism"] {
+    // Theme-specific H1 typeface (renders as Archivo Black at weight 900)
+    h1 {
+        font-family: var(--font-poster);
+        font-weight: var(--text-weight-black);
+    }
+
+    .intro-text-contain h2 {
+        font-family: var(--font-poster);
+        font-weight: var(--text-weight-semibold);
+    }
+
     // Custom Cursor Alt Style
     .cursor {
         background-color: transparent;
@@ -168,6 +179,28 @@ html[data-theme="minimal-neobrutalism"] {
             background-color: var(--color-neutral-0);
             box-shadow: var(--shadow-default);
             padding: var(--space-2) var(--space-6);
+        }
+
+        // About page
+        .about-hero img, .personal-section .images-container li img {
+            border: var(--border-default);
+        }
+
+        h1, h2, h3, h4, h5, p {
+            color: var(--color-neutral-900);
+        }
+
+        .about-hero .bio-container, .skill-category, .ed-item,
+        .certifications-section .cert-item,
+        .bio-container {
+            border: var(--border-default);
+            background-color: var(--color-neutral-0);
+            box-shadow: var(--shadow-default);
+            padding: var(--space-8);
+        }
+
+        .certifications-section .cert-list .cert-item {
+            border-radius: 0;
         }
     }
 }
