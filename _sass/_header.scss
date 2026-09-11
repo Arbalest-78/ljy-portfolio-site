@@ -203,6 +203,8 @@ header {
 
 //Flips on when GSAP adds .nav-alt-color to header
 header.nav-alt-color {
+    //Maintain blurred bg after triggering
+    backdrop-filter: blur(10px);
 
     .logo .logo-wht {
         opacity: 0;

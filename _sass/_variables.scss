@@ -108,27 +108,13 @@
         border: 0;
     }
 
-    // // Grainy Noise Texture (available across themes)
-    // --noise-texture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2' numOctaves='1' seed='11'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.6'/%3E%3C/svg%3E");
-    // --noise-opacity: 0.55;
-    // --noise-blend-mode: overlay
-
-    // //Grainy Noise Utility Class
-    // .noise {
-    //     position: relative;
-    //     overflow: hidden;
-
-    //     &::before {
-    //         content: "";
-    //         position: absolute;
-    //         inset: -20%;
-    //         pointer-events: none;
-
-    //         background-image: var(--noise-texture);
-    //         opacity: var(--noise-opacity);
-    //         mix-blend-mode: var(--noise-blend-mode);
-    //     }
-    // }
+    // Noise Overlay - Utility Class
+    .noise {
+    background-image: url('../images/noise.svg'); //Generated w/ noisegradient.com, looooong code.
+    opacity: 0.2;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    }
 }
 
 html[data-theme="minimal-solaris"] {
@@ -138,6 +124,15 @@ html[data-theme="minimal-solaris"] {
 
     //Gradient
     --solar-gradient: linear-gradient(135deg, var(--flare) 0%, var(--solar) 100%);
+
+    //Remove the header bg blur on hero section, and addes it back when in case-studies
+    body.page-home header {
+        backdrop-filter: none;
+    }
+
+    body.page-home header.nav-alt-color {
+        backdrop-filter: blur(10px);
+    }
 }
 
 html[data-theme="minimal-neobrutalism"] {

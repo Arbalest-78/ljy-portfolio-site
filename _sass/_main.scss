@@ -336,12 +336,21 @@ p {
 .hero {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(rgba(252, 252, 252, 25%), rgba(252, 252, 252, 25%)), var(--solar-gradient);
+    position: relative;
+    z-index: -1;
+    min-height: 100vh;
     padding: var(--space-card-padding);
     padding-inline: var(--edge-inset);
     box-sizing: border-box;
-    min-height: 100vh;
     justify-content: flex-end;
+    background: linear-gradient(rgba(252, 252, 252, 25%), rgba(252, 252, 252, 25%)), var(--solar-gradient);
+
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+    }
+
 
     h1, h2, h3, h4, h5, p {
         color: var(--color-neutral-0);
