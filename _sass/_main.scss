@@ -228,13 +228,44 @@ p {
     border: var(--border-default);
     border-radius: 2rem;
     background-color: transparent;
+
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transform: var(--button-transform-normal);
+    transition: transform var(--header-transition-duration) var(--header-transition-ease);
 }
 
 .filter-btn > p{
     position: relative;
+    font-size: var(--text-size-subtitle);
     z-index: 1;
     color: var(--color-neutral-900);
     transition: color var(--header-transition-duration) var(--header-transition-ease);
+}
+
+.filter-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--color-neutral-900);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--header-transition-duration) var(--header-transition-ease);
+    z-index: 0;
+}
+
+.filter-btn.active,
+.filter-btn:hover,
+.filter-btn:focus-visible {
+    &::before {
+        transform: scaleX(1);
+    }
+
+    > p {
+        color: var(--color-neutral-0);
+    }
 }
 
 // Subtle horizontal push effect between sibling tab buttons
@@ -257,11 +288,33 @@ p {
     transform: translateX(calc(var(--tab-push-distance) * -1));
 }
 
+.project-filters {
+    --filter-push-distance: 0.25rem;
+}
+
+.project-filters .filter-btn:hover,
+.project-filters .filter-btn:focus-visible {
+    transform: var(--button-transform-hover);
+}
+
+.project-filters .filter-btn:hover ~ .filter-btn,
+.project-filters .filter-btn:focus-visible ~ .filter-btn {
+    transform: translateX(var(--filter-push-distance));
+}
+
+.project-filters .filter-btn:has(~ .filter-btn:hover),
+.project-filters .filter-btn:has(~ .filter-btn:focus-visible) {
+    transform: translateX(calc(var(--filter-push-distance) * -1));
+}
+
 // Handles perfer reduced motion enabled users
 @media (prefers-reduced-motion: reduce) {
     .tab-btn,
     .tab-btn > p,
     .tab-btn::before,
+    .filter-btn,
+    .filter-btn > p,
+    .filter-btn::before,
     .hero .hero-content .intro-tabs .tab-viewport .tab-item.active {
         transition: none !important;
         animation: none !important;
@@ -485,7 +538,7 @@ p {
         display: flex;
         flex-wrap: wrap;
         gap: var(--space-stack-sm);
-        padding-bottom: var(--space-stack-lg);
+        padding-bottom: var(--space-8);
     }
 
     .cards-contain {
