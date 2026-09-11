@@ -85,8 +85,14 @@ To stop liverserver, use Ctrl + C -->
     <div class="intro-text-contain">
         <h2 class="oversize">Selected<br>Case Studies</h2>
     </div>
+    <div class = "project-filters">
+         <button class="filter-btn active" data-filter="all"><p>All</p></button>
+         <button class="filter-btn" data-filter="web"><p>Web</p></button>
+         <!-- <button class="filter" data-filter="ai"><p>AI</p></button> -->
+    </div>
     <div class="cards-contain">
-        <div class="card">
+        <div class="card" data-tags = "web">
+            <!-- ^^ data-tags are necessary for ALL projects or JS would throw undefined, use empty string if only visible in All-->
             <div class="lightbox showcase-bg-color-drill">
                 <img src="{{ '/assets/images/drill/drill-mock-in-progress.png' | relative_url }}"
                     alt="A chat screen for technical coding questions">
@@ -97,7 +103,7 @@ To stop liverserver, use Ctrl + C -->
                 <p>Interview Prep | Web App</p>
             </div>
         </div>
-        <div class="card">
+        <div class="card" data-tags="">
             <div class="lightbox bg-color-fileworks">
                 <img src="{{ '/assets/images/fileworks/fielworks-temp-cover.png' | relative_url }}"
                     alt="A chat screen for technical coding questions">
@@ -108,7 +114,7 @@ To stop liverserver, use Ctrl + C -->
                 <p>Legaltech MVP | Web App</p>
             </div>
         </div>
-        <div class="card">
+        <div class="card" data-tags="">
             <div class="lightbox bg-color-bfhr">
                 <img src="{{ '/assets/images/bf-hr/bf-hr-employeeList.png' | relative_url }}"
                     alt="A chat screen for technical coding questions">
@@ -119,7 +125,7 @@ To stop liverserver, use Ctrl + C -->
                 <p>Internal Tool | Web App</p>
             </div>
         </div>
-        <div class="card">
+        <div class="card" data-tags="">
             <div class="lightbox bg-color-godeals">
                 <img src="{{ '/assets/images/GOdeals/godeals-heroshot.png' | relative_url }}"
                     alt="A chat screen for technical coding questions">

@@ -108,11 +108,11 @@
         border: 0;
     }
 
-    // Noise Overlay - Utility Class
+    // Noise Overlay - Utility Class for bg
     .noise {
     background-image: url('../images/noise.svg'); //Generated w/ noisegradient.com, looooong code.
-    opacity: 0.2;
-    mix-blend-mode: multiply;
+    opacity: 0.3;
+    mix-blend-mode: overlay;
     pointer-events: none;
     }
 }

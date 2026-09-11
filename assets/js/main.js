@@ -251,6 +251,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+// Project Cards Filtering
+const filters = document.querySelectorAll(".filter-btn");
+const projects = document.querySelectorAll(".card");
+
+filters.forEach(filter => {
+
+  filter.addEventListener("click", () => {
+
+    const selectedTag = filter.dataset.filter;
+
+    // Update active button
+    filters.forEach(button => {
+      button.classList.toggle(
+        "active",
+        button === filter
+      );
+    });
+
+    projects.forEach(project => {
+
+      const tags = (project.dataset.tags || "").split(" ").filter(Boolean);
+      const matches =
+        selectedTag === "all" ||
+        tags.includes(selectedTag);
+
+      project.classList.toggle("hidden", !matches);
+
+    });
+
+  });
+
+});
+
 // GSAP Animations
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 

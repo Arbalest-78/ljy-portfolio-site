@@ -215,6 +215,28 @@ p {
     }
 }
 
+.filter-btn {
+    display: flex;
+    flex-direction: row;
+    text-transform: capitalize;
+    text-align: center;
+
+    width: max-content;
+    gap: 0.5rem;
+    padding: 0.2rem 0.8rem;
+
+    border: var(--border-default);
+    border-radius: 2rem;
+    background-color: transparent;
+}
+
+.filter-btn > p{
+    position: relative;
+    z-index: 1;
+    color: var(--color-neutral-900);
+    transition: color var(--header-transition-duration) var(--header-transition-ease);
+}
+
 // Subtle horizontal push effect between sibling tab buttons
 .tab-controls {
     --tab-push-distance: 0.25rem;
@@ -337,7 +359,7 @@ p {
     display: flex;
     flex-direction: column;
     position: relative;
-    z-index: -1;
+    isolation: isolate;
     min-height: 100vh;
     padding: var(--space-card-padding);
     padding-inline: var(--edge-inset);
@@ -459,6 +481,13 @@ p {
         }
     }
 
+    .project-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-stack-sm);
+        padding-bottom: var(--space-stack-lg);
+    }
+
     .cards-contain {
         display: flex;
         flex-direction: column;
@@ -509,6 +538,10 @@ p {
         :nth-child(4) > .lightbox {
             padding: 0;
             background-color: var(--color-neutral-0);
+        }
+
+        .card.hidden {
+            display: none;
         }
     }
 
